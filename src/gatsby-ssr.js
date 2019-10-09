@@ -3,13 +3,13 @@ import { stripIndent } from "common-tags";
 
 exports.onRenderBody = (
   { setHeadComponents, setPostBodyComponents },
-  { apiKey, appId, indexName, inputSelector, debug = false, customCss = false }
+  { apiKey, appId, indexName, inputSelector, debug = false, loadCss = true, deferJs = false }
 ) => {
   if (!apiKey || !indexName || !inputSelector) {
     return;
   }
 
-  if(!customCss) {
+  if(loadCss) {
     setHeadComponents([
       <link
         key="plugin-docsearch-css"
@@ -24,6 +24,7 @@ exports.onRenderBody = (
       key="plugin-docsearch-js"
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
+      defer={deferJs || undefined}
     />,
     <script
       key="plugin-docsearch-initiate"
