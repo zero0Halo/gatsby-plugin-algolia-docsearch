@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-algolia-docsearch-appid",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Gatsby plugin for integrating with Algolia DocSearch. Includes parameter for appId if you run your own instance.",
   "author": "(Original) Jimmy Cann <mail@jimmycann.com>, (Fork) Steve Swanson <steve.e.swanson@gmail.com>",
   "dependencies": {
