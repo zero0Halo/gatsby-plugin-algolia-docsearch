@@ -33,7 +33,7 @@ exports.onRenderBody = (
         __html: stripIndent`
         var observer = new MutationObserver(function (mutations, instance) {
           var docuSearchElem = document.querySelector('${inputSelector}');
-          if (docuSearchElem) {
+          if (docsearch && docuSearchElem) {
             docsearch({
               apiKey: "${apiKey}",
               indexName: "${indexName}",

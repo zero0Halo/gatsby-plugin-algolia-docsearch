@@ -19,14 +19,26 @@ plugins: [
       apiKey: "ALGOLIA_DOCUSEARCH_API_KEY", // required
       indexName: "ALGOLIA_DOCUSEARCH_INDEX_NAME", // required
       inputSelector: "ALGOLIA_DOCUSEARCH_INPUT_SELCTOR", // required
-      debug: false // (bool) Optional. Default `false`
+      appId: "ALGOLIA_DOCUSEARCH_APP_ID", // optional
+      debug: false, // (bool) Optional. Default `false`
+      loadCss: true // (bool) Optional. Default `true`
+      deferJs: false // (bool) Optional. Default `false`
     }
   }
 ];
 ```
 
 The fields `apiKey`, `indexName` and `inputSelector` must be set. This plugin has been configured not to throw when one
-of these is missing, rather, it will simply do nothing.
+of these is missing, rather, it will simply do nothing. If you are running your own custom implementation of DocSearch,
+you'll also need to provide your `appId`.
+
+By default, this plugin loads the DocSearch CSS from a CDN. However you can stop it from doing that
+by setting `loadCss` to `false`. This is useful if you are using your own custom CSS and want to
+use your own workflow.
+
+In addition, you can set `deferJs` to `true` which adds the `defer` attribute to the script tag that
+loads the CDN hosted DocSearch js file. This may be useful if you find that the script is holding up
+rendering of your site.
 
 Now all that you need to do it add an `input` type element anywhere on the page with a selector that matches the `inputSelector`
 field in your `options` object to enjoy Algolia DocSearch in your Gatsby project!
