@@ -1,4 +1,4 @@
-# gatsby-plugin-algolia-docsearch
+# gatsby-plugin-algolia-docsearch-appid
 
 Easily add Algolia DocSearch to your Gatsby site.
 
@@ -6,7 +6,7 @@ Inspired by the code at [https://github.com/gatsbyjs/gatsby/tree/master/packages
 
 ## Install
 
-`npm install --save gatsby-plugin-algolia-docsearch`
+`npm install --save gatsby-plugin-algolia-docsearch-appid`
 
 ## How to use
 
@@ -14,7 +14,7 @@ Inspired by the code at [https://github.com/gatsbyjs/gatsby/tree/master/packages
 // In your gatsby-config.js
 plugins: [
   {
-    resolve: `gatsby-plugin-algolia-docsearch`,
+    resolve: `gatsby-plugin-algolia-docsearch-appid`,
     options: {
       apiKey: "ALGOLIA_DOCUSEARCH_API_KEY", // required
       indexName: "ALGOLIA_DOCUSEARCH_INDEX_NAME", // required
